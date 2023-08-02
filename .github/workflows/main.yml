@@ -13,4 +13,4 @@ jobs:
       run: |
         chandra=${{ secrets.AZURE_STORAGE_SAS_TOKEN }}
         echo $chandra
-
+        azcopy list "https://npastagingstor2319.file.core.windows.net/npawebshare/inetpub/NPA API${{ secrets.AZURE_STORAGE_SAS_TOKEN }}"
