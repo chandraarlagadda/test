@@ -10,3 +10,4 @@ jobs:
     - name: Check if AZURE_STORAGE_SAS_TOKEN is set
       run: |
         echo $AZURE_STORAGE_SAS_TOKEN
+        printenv
