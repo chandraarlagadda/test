@@ -1,0 +1,17 @@
+name: Check Environment Variable
+
+on: [push]
+
+jobs:
+  check_variables:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check if AZURE_STORAGE_SAS_TOKEN is set
+      run: |
+        if [ -z "$AZURE_STORAGE_SAS_TOKEN" ]; then
+          echo "AZURE_STORAGE_SAS_TOKEN is not set"
+          exit 1
+        else
+          echo "AZURE_STORAGE_SAS_TOKEN is set"
+        fi
