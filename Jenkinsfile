@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  //test
 
   stages {
     stage('Clean workspace') {
