@@ -8,8 +8,10 @@ pipeline {
       }
     }
 
-    stage('Checkout-1') {
+    stage('Checkout') {
       steps {
-        checkout scmGit(branches: [[name: 'staging']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-integration', url: 'https://github.com/Net-Pay-Advance-Inc/NPAACH.git']])
+        checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/chandraarlagadda/test.git']])
       }
     }
+  }
+}
