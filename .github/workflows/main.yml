@@ -1,7 +1,12 @@
 name: Check Secret Variable
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
+    branches:
+      - main
 
 jobs:
   check_variables:
