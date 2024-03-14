@@ -1,7 +1,7 @@
 name: Check Secret Variable
 
 on:
-  push:
+  pull_request:
 
 jobs:
   check_variables:
@@ -10,6 +10,8 @@ jobs:
     steps:
     - name: Check if AZURE_STORAGE_SAS_TOKEN is set
       env:
-        user1: ${{ github.actor }}
+        committer: ${{ github.event.pull_request.head.user.login }}
+        author: ${{ github.event.pull_request.user.login }}
       run: |
-        echo "User who triggered the action: $user1"
+        echo "Committer: $committer"
+        echo "Author of the pull request: $author"
