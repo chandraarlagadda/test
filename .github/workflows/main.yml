@@ -8,9 +8,11 @@ jobs:
 
     steps:
     - name: Check if AZURE_STORAGE_SAS_TOKEN is set
-     # env:
-      #  AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_STORAGE_SAS_TOKEN }}
+      env:
+        user1: ${github.event.head.user.login}
+        user2:: ${github.event.base.user.login }
       run: |
+        echo $user1
+        echo $user2
         
         
-        azcopy list "https://npastagingstor2319.file.core.windows.net/npawebshare/inetpub/NPA API${{ secrets.AZURE_STORAGE_SAS_TOKEN }}"
