@@ -10,11 +10,6 @@ jobs:
     steps:
     - name: Check if AZURE_STORAGE_SAS_TOKEN is set
       env:
-        user1: ${{ github.event.head.user.login }}
-        user2: ${{ github.event.base.user.login }}
+        user1: ${{ github.actor }}
       run: |
-        echo $user1
-        echo $user2
-
-        
-        
+        echo "User who triggered the action: $user1"
