@@ -1,6 +1,7 @@
-name: Check Secret Variable #
+name: Check Secret Variable
 
-on: [push]
+on:
+  push:
 
 jobs:
   check_variables:
@@ -9,10 +10,11 @@ jobs:
     steps:
     - name: Check if AZURE_STORAGE_SAS_TOKEN is set
       env:
-        user1: ${github.event.head.user.login}
-        user2:: ${github.event.base.user.login }
+        user1: ${{ github.event.head.user.login }}
+        user2: ${{ github.event.base.user.login }}
       run: |
         echo $user1
         echo $user2
+
         
         
